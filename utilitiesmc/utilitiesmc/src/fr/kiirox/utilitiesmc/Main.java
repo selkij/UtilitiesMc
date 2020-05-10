@@ -16,7 +16,6 @@ public class Main extends JavaPlugin {
 		getCommand("gm2").setExecutor(new Command());
 		getCommand("feed").setExecutor(new Command());
 		getCommand("heal").setExecutor(new Command());
-		getCommand("vanish").setExecutor(new Command());
 		
 	}
 	
