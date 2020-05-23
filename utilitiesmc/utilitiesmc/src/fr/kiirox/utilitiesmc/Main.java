@@ -16,6 +16,9 @@ public class Main extends JavaPlugin {
 		getCommand("gm2").setExecutor(new Command());
 		getCommand("feed").setExecutor(new Command());
 		getCommand("heal").setExecutor(new Command());
+		getCommand("setlife").setExecutor(new Command());
+		getCommand("godmode").setExecutor(new Command());
+		getCommand("fly").setExecutor(new Command());
 		
 	}
 	

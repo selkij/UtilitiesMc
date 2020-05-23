@@ -63,8 +63,8 @@ public class Command implements CommandExecutor {
 				}
 				//with argument
 				if(args.length == 1) {
-					Player target = Bukkit.getPlayerExact(args[0]);
-					if (target == null) {
+					final Player target = Bukkit.getPlayerExact(args[0]);
+					if (target == null || !target.isOnline()) {
 					player.sendMessage("§l§4The target is offline or does not exist!");
 					} else {
 						if(target.getGameMode() == GameMode.CREATIVE) {
@@ -91,8 +91,8 @@ public class Command implements CommandExecutor {
 				}
 				//with argument
 				if(args.length == 1) {
-					Player target = Bukkit.getPlayerExact(args[0]);
-					if (target == null) {
+					final Player target = Bukkit.getPlayerExact(args[0]);
+					if (target == null || !target.isOnline()) {
 					player.sendMessage("§l§4The target is offline or does not exist!");
 					} else {
 						if(target.getGameMode() == GameMode.SURVIVAL) {
@@ -119,8 +119,8 @@ public class Command implements CommandExecutor {
 				}
 				//with argument
 				if(args.length == 1) {
-					Player target = Bukkit.getPlayerExact(args[0]);
-					if (target == null) {
+					final Player target = Bukkit.getPlayerExact(args[0]);
+					if (target == null || !target.isOnline()) {
 					player.sendMessage("§l§4The target is offline or does not exist!");
 					} else {
 						if(target.getGameMode() == GameMode.SPECTATOR) {
@@ -147,8 +147,8 @@ public class Command implements CommandExecutor {
 				}
 				//with argument
 				if(args.length == 1) {
-					Player target = Bukkit.getPlayerExact(args[0]);
-					if (target == null) {
+					final Player target = Bukkit.getPlayerExact(args[0]);
+					if (target == null || !target.isOnline()) {
 					player.sendMessage("§l§4The target is offline or does not exist!");
 					} else {
 						if(target.getGameMode() == GameMode.ADVENTURE) {
@@ -171,7 +171,7 @@ public class Command implements CommandExecutor {
 	        }
 	    		//with arguments
 	    	    if(args.length == 1) {
-	    	    	Player target = Bukkit.getPlayerExact(args[0]);
+	    	    	final Player target = Bukkit.getPlayerExact(args[0]);
 	    	    	if (target == null) {
 	    	    		player.sendMessage("§l§4The target is offline or does not exist!");
 	    	    	} else {
@@ -190,8 +190,8 @@ public class Command implements CommandExecutor {
 	        }
 	    		//with arguments
 	    	    if(args.length == 1) {
-	    	    	Player target = Bukkit.getPlayerExact(args[0]);
-	    	    	if (target == null) {
+	    	    	final Player target = Bukkit.getPlayerExact(args[0]);
+	    	    	if (target == null || !target.isOnline()) {
 	    	    		player.sendMessage("§l§4The target is offline or does not exist!");
 	    	    	} else {
 	    	    		player.sendMessage("§l§4"+ target.getName()+ " §6has been healed");
@@ -200,9 +200,77 @@ public class Command implements CommandExecutor {
 				}
 	    	}
 	    	   return true;
-    }
+    }	
+			if(cmd.getName().equalsIgnoreCase("godmode")) {
+				//without arguments
+				if(args.length == 0) {
+					if(player.isInvulnerable()) {
+						player.setInvulnerable(false);
+						player.sendMessage("§l§6set [§4GODMODE§6] to §cOFF§6 to " + player.getName());
+					} else {
+						player.setInvulnerable(true);
+						player.sendMessage("§l§6set [§4GODMODE§6] to §2ON§6 to " + player.getName());
+					}
+				}
+				//with arguments
+				if(args.length == 1) {
+					final Player target = Bukkit.getPlayerExact(args[0]);
+					if(target == null || !target.isOnline()) {
+						player.sendMessage("§l§4The target is offline or does not exist!");
+					} else {
+						if(target.isInvulnerable()) {
+							target.setInvulnerable(false);;
+							player.sendMessage("§l§6set [§4GODMODE§6] to §cOFF§6 to" + target.getName());
+							target.sendMessage("§l§6[§4GODMODE§6] has been set to §cOFF");
+						} else {
+							target.setInvulnerable(true);
+							player.sendMessage("§l§6set [§4GODMODE§6] to §2ON§6 to " + target.getName());
+							target.sendMessage("§l§6[§4GODMODE§6] has been set to §2ON");
+						}
+					}
+				}       
+				
+			return true;
+	      }
 			
-  }
+			if(cmd.getName().equalsIgnoreCase("fly")) {
+				//without arguments
+				if(args.length == 0) {
+					if(player.isFlying()) {
+						player.setAllowFlight(false);
+						player.setFlying(false);
+						player.sendMessage("§l§6set [§4FLYMODE§6] to §cOFF§6 to " + player.getName());
+					} else {
+						player.setAllowFlight(true);
+						player.setFlying(true);
+						player.sendMessage("§l§6set [§4FLYMODE§6] to §2ON§6 to " + player.getName());
+					}
+				}
+				//with arguments
+				if(args.length == 1) {
+					final Player target = Bukkit.getPlayerExact(args[0]);
+					if(target == null || !target.isOnline()) {
+						player.sendMessage("§l§4The target is offline or does not exist!");
+					
+					} else {
+						if(target.isFlying()) {
+							target.setAllowFlight(false);
+							target.setFlying(false);
+							player.sendMessage("§l§6set [§4FLYMODE§6] to §cOFF§6 to " + target.getName());
+							target.sendMessage("§l§6[§4FLYMODE§6] has been set to §cOFF");
+						} else {
+							target.setAllowFlight(true);
+							target.setFlying(true);
+							player.sendMessage("§l§6set [§4FLYMODE§6] to §2ON§6 to " + target.getName());
+							target.sendMessage("§l§6[§4FLYMODE§6] has been set to §2ON");
+						}
+					}
+				}
+				
+			return true;
+	      }
+	   
+    }
 		
 		return false;
  }

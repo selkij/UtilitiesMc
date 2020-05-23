@@ -1,13 +1,13 @@
 name: UtilitiesMc
-version: 1.0
+version: 1.2
 author: kiirox
 main: fr.kiirox.utilitiesmc.Main
 commands: 
   bc:
-    description: Do a broadcast usage /bc <message>
+    description: Do a broadcast usage. /bc <message>
     permission: bc.use
   alert:
-    description: Do a broadcast usage /alert <message>
+    description: Do a broadcast usage. /alert <message>
     permission: alert.use
   gm1:
     description: Activate the creative mode. usage /gm1 <args>
@@ -27,3 +27,9 @@ commands:
   heal:
     description: Restore the life level to 20. usage /heal <args>
     permission: heal.use
+  godmode:
+    description: Set god mode. usage /godmode <args>
+    permission: godmode.use
+  fly:
+    description: Set fly mode. usage /fly <args>
+    permission: fly.use
