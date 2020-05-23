@@ -33,3 +33,6 @@ commands:
   fly:
     description: Set fly mode. usage /fly <args>
     permission: fly.use
+  flyspeed:
+    description: Set the fly speed. usage /flyspeed <0->
+    permission! flyspeed.use
