@@ -1,0 +1,39 @@
+name: UtilitiesMc
+version: 1.2.4
+author: kiirox
+main: fr.kiirox.utilitiesmc.Main
+commands: 
+  bc:
+    description: Do a broadcast usage. /bc <message>
+    permission: bc.use
+  alert:
+    description: Do a broadcast usage. /alert <message>
+    permission: alert.use
+  gm1:
+    description: Activate the creative mode. usage /gm1 <player>
+    permission: gm1.use
+  gm0:
+    description: Activate the survival mode. usage /gm0 <player>
+    permission: gm0.use
+  gm3:
+    description: Activate the spectator mode. usage /gm3 <player>
+    permission: gm3.use
+  gm2:
+    description: Activate the spectator mode. usage /gm2 <player>
+    permission: gm3.use
+  feed:
+    description: Restore the food level to 20. usage /feed <player>
+    permission: feed.use
+  heal:
+    description: Restore the life level to 20. usage /heal <player>
+    permission: heal.use
+  godmode:
+    description: Set god mode. usage /godmode <player>
+    permission: godmode.use
+  fly:
+    description: Set fly mode. usage /fly <player>
+    permission: fly.use
+  gui:
+    description: Open a GUI with all the commands. usage /gui
+    permission: gui.use
+ 
