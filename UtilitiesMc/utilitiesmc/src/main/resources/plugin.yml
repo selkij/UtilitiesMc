@@ -1,5 +1,5 @@
 name: UtilitiesMc
-version: 2.0.2
+version: 2.1
 author: kiirox
 main: fr.kiirox.utilitiesmc.Main
 commands: 
@@ -17,7 +17,7 @@ commands:
     description: Activate the spectator mode. usage /gm3 <player>
     permission: gm3.use
   gm2:
-    description: Activate the spectator mode. usage /gm2 <player>
+    description: Activate the adventure mode. usage /gm2 <player>
     permission: gm3.use
   feed:
     description: Restore the food level to 20. usage /feed <player>
@@ -30,9 +30,12 @@ commands:
     permission: godmode.use
     aliases: ["god"]
   fly:
-    description: Set fly mode. usage /fly <player>
+    description: Set fly mode to be able to fly. usage /fly <player>
     permission: fly.use
   menu:
     description: Open a GUI with all the commands. usage /menu
     permission: menugui.use
+  helpcom:
+    description: Open a help GUI for all the commands. usage /helpCom
+    permission: helpcom.use
  

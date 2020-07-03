@@ -25,7 +25,7 @@ public class CommandGmZero implements CommandExecutor {
             // without argument
             if (args.length == 0) {
                 if (player.getGameMode() == GameMode.SURVIVAL) {
-                    player.sendMessage("§l§6You are already in [§Survival§] mode");
+                    player.sendMessage("§l§6You are already in [§4Survival§6] mode");
                 } else {
                     player.setGameMode(GameMode.SURVIVAL);
                     player.sendMessage("§l§6set [§4Survival§6] mode to §e" + player.getName());

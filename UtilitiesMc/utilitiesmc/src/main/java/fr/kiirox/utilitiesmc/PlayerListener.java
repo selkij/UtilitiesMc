@@ -30,6 +30,7 @@ public class PlayerListener implements Listener {
                 return;
 
             if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§dBroadcast")) {
+                player.closeInventory();
                 player.sendMessage("§4§lUsage:§r /bc <message>");
                 player.sendMessage("/broadcast <message>");
                 player.sendMessage("/alert <message>");
@@ -49,6 +50,10 @@ public class PlayerListener implements Listener {
 
             if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aHeal")) {
                 player.openInventory(heal());
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§5Help")) {
+                player.openInventory(help());
             }
 
             if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §1Creative")) {
@@ -151,6 +156,136 @@ public class PlayerListener implements Listener {
             if (!e.getCurrentItem().getItemMeta().getDisplayName().equals(player.getName())) {
                 player.sendMessage("§4" + e.getCurrentItem().getItemMeta().getDisplayName() + " §6Has been feed!");
             }
+        }
+
+        if(e.getView().getTitle().equalsIgnoreCase("Help Menu")) {
+            e.setCancelled(true);
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lBack -->")) {
+                player.openInventory(getGui());
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§fFly")) {
+                player.closeInventory();
+                player.sendMessage("§6----------------------");
+                player.sendMessage("§b§lInfos Command: ");
+                player.sendMessage(" ");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lName:§r Fly");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lDescription:§r Set fly mode to be able to fly");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lUsage:§r /fly <player>");
+                player.sendMessage("§6----------------------");
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§6God")) {
+                player.closeInventory();
+                player.sendMessage("§6----------------------");
+                player.sendMessage("§b§lInfos Command: ");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lName:§r God");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lDescription:§r Set the god mode to be invulnerable");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lUsage:§r /god <player>");
+                player.sendMessage("              aliases: /godmode <player>");
+                player.sendMessage("§6----------------------");
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aHeal")) {
+                player.closeInventory();
+                player.sendMessage("§6----------------------");
+                player.sendMessage("§b§lInfos Command: ");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lName:§r Heal");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lDescription:§r Restore the life level to 20");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lUsage:§r /heal <player>");
+                player.sendMessage("§6----------------------");
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§eFeed")) {
+                player.closeInventory();
+                player.sendMessage("§6----------------------");
+                player.sendMessage("§b§lInfos Command: ");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lName:§r Feed");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lDescription:§r Restore the food level to 20");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lUsage:§r /feed <player>");
+                player.sendMessage("§6----------------------");
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§dBroadcast")) {
+                player.closeInventory();
+                player.sendMessage("§6----------------------");
+                player.sendMessage("§b§lInfos Command: ");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lName:§r Broadcast");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lDescription:§r Do a broadcast usage");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lUsage:§r /bc <message>");
+                player.sendMessage("              aliases: /alert <message>");
+                player.sendMessage("                       /broadcast <message>");
+                player.sendMessage("§6----------------------");
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §2Survival")) {
+                player.closeInventory();
+                player.sendMessage("§6----------------------");
+                player.sendMessage("§b§lInfos Command: ");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lName:§r Gamemode Survival");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lDescription:§r Activate the survival mode");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lUsage:§r /gm0 <player>");
+                player.sendMessage("§6----------------------");
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §1Creative")) {
+                player.closeInventory();
+                player.sendMessage("§6----------------------");
+                player.sendMessage("§b§lInfos Command: ");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lName:§r Gamemode Creative");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lDescription:§r Activate the creative mode");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lUsage:§r /gm1 <player>");
+                player.sendMessage("§6----------------------");
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §4Adventure")) {
+                player.closeInventory();
+                player.sendMessage("§6----------------------");
+                player.sendMessage("§b§lInfos Command: ");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lName:§r Gamemode Adventure");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lDescription:§r Activate the adventure mode");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lUsage:§r /gm2 <player>");
+                player.sendMessage("§6----------------------");
+            }
+
+            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §7Spectator")) {
+                player.closeInventory();
+                player.sendMessage("§6----------------------");
+                player.sendMessage("§b§lInfos Command: ");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lName:§r Gamemode Spectator");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lDescription:§r Activate the spectator mode");
+                player.sendMessage(" ");
+                player.sendMessage("§6§lUsage:§r /gm3 <player>");
+                player.sendMessage("§6----------------------");
+            }
+
         }
 
     }

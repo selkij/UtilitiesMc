@@ -35,44 +35,10 @@ public class CommandMenu implements CommandExecutor {
                 .setLore("§8§lSet the food level to 20");
         ItemBuilder bc = new ItemBuilder(Material.BEACON).setName("§dBroadcast")
                 .setLore("§8§lDo an alert message");
-        //none
-        inventory.setItem(53, not.toItemStack());
-        inventory.setItem(52, not.toItemStack());
-        inventory.setItem(51, not.toItemStack());
-        inventory.setItem(50, not.toItemStack());
-        inventory.setItem(49, not.toItemStack());
-        inventory.setItem(48, not.toItemStack());
-        inventory.setItem(47, not.toItemStack());
-        inventory.setItem(46, not.toItemStack());
-        inventory.setItem(45, not.toItemStack());
-        inventory.setItem(44, not.toItemStack());
-        inventory.setItem(43, not.toItemStack());
-        inventory.setItem(41, not.toItemStack());
-        inventory.setItem(40, not.toItemStack());
-        inventory.setItem(39, not.toItemStack());
-        inventory.setItem(37, not.toItemStack());
-        inventory.setItem(36, not.toItemStack());
-        inventory.setItem(35, not.toItemStack());
-        inventory.setItem(34, not.toItemStack());
-        inventory.setItem(32, not.toItemStack());
-        inventory.setItem(31, not.toItemStack());
-        inventory.setItem(30, not.toItemStack());
-        inventory.setItem(29, not.toItemStack());
-        inventory.setItem(28, not.toItemStack());
-        inventory.setItem(27, not.toItemStack());
-        inventory.setItem(26, not.toItemStack());
-        inventory.setItem(25, not.toItemStack());
-        inventory.setItem(23, not.toItemStack());
-        inventory.setItem(22, not.toItemStack());
-        inventory.setItem(19, not.toItemStack());
-        inventory.setItem(18, not.toItemStack());
-        inventory.setItem(17, not.toItemStack());
-        inventory.setItem(16, not.toItemStack());
-        inventory.setItem(14, not.toItemStack());
-        inventory.setItem(13, not.toItemStack());
-        inventory.setItem(10, not.toItemStack());
+        ItemBuilder help = new ItemBuilder(Material.COMPASS).setName("§5Help")
+                .setLore("§8§lOpen a GUI with the informations", "§8§lof all the commands");
 
-        //utility
+        inventory.setItem(40, help.toItemStack());
         inventory.setItem(38, bc.toItemStack());
         inventory.setItem(21, feed.toItemStack());
         inventory.setItem(20, heal.toItemStack());
@@ -83,8 +49,8 @@ public class CommandMenu implements CommandExecutor {
         inventory.setItem(12, god.toItemStack());
         inventory.setItem(11, fly.toItemStack());
         //none
-        int[] slots = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        for (int i = 0; i < slots.length; i++) {
+        int[] slots = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 16, 17, 18, 19, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 39, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53};
+        for (int i : slots) {
 
             inventory.setItem(i, not.toItemStack());
         }
@@ -220,6 +186,45 @@ public class CommandMenu implements CommandExecutor {
             inventory.setItem(slot, head.toItemStack());
             slot++;
         }
+        return inventory;
+    }
+
+    public static Inventory help() {
+        Inventory inventory = Bukkit.createInventory(null, 18, "Help Menu");
+
+        ItemBuilder fly = new ItemBuilder(Material.FEATHER).setName("§fFly")
+                .setLore("§8§lToggle the fly mode to be able to fly");
+        ItemBuilder god = new ItemBuilder(Material.SKULL_ITEM, 1, (byte) 3).setName("§6God")
+                .setLore("§8§lToggle the god mode to be invincible");
+        ItemBuilder gmOne = new ItemBuilder(Material.DIAMOND_BLOCK, 1, (byte) 3).setName("Gamemode §1Creative")
+                .setLore("§8§lSet the gamemode to creative");
+        ItemBuilder gmTwo = new ItemBuilder(Material.CONCRETE).setName("Gamemode §4Adventure")
+                .setDurability((short) 14)
+                .setLore("§8§lSet the gamemode to adventure");
+        ItemBuilder gmThree = new ItemBuilder(Material.GLASS).setName("Gamemode §7Spectator")
+                .setLore("§8§lSet the gamemode to spectator");
+        ItemBuilder gmZero = new ItemBuilder(Material.GRASS).setName("Gamemode §2Survival")
+                .setLore("§8§lSet the gamemode to survival");
+        ItemBuilder heal = new ItemBuilder(Material.GOLDEN_APPLE, 1, (byte) 3).setName("§aHeal")
+                .setDurability((short) 1)
+                .setLore("§8§lSet the health level to 20");
+        ItemBuilder feed = new ItemBuilder(Material.COOKED_BEEF).setName("§eFeed")
+                .setLore("§8§lSet the food level to 20");
+        ItemBuilder bc = new ItemBuilder(Material.BEACON).setName("§dBroadcast")
+                .setLore("§8§lDo an alert message");
+        ItemBuilder back = new ItemBuilder(Material.BARRIER).setName("§4§lBack -->");
+
+        inventory.setItem(0, fly.toItemStack());
+        inventory.setItem(1, god.toItemStack());
+        inventory.setItem(2, heal.toItemStack());
+        inventory.setItem(3, feed.toItemStack());
+        inventory.setItem(4, bc.toItemStack());
+        inventory.setItem(5, gmZero.toItemStack());
+        inventory.setItem(6, gmOne.toItemStack());
+        inventory.setItem(7, gmTwo.toItemStack());
+        inventory.setItem(8, gmThree.toItemStack());
+        inventory.setItem(17, back.toItemStack());
+
         return inventory;
     }
 

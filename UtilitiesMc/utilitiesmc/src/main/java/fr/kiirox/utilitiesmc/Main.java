@@ -1,6 +1,7 @@
 package fr.kiirox.utilitiesmc;
 
 import fr.kiirox.utilitiesmc.commands.*;
+import net.minecraft.server.v1_12_R1.CommandHelp;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -17,6 +18,7 @@ public class Main extends JavaPlugin {
         getCommand("godmode").setExecutor(new CommandGod());
         getCommand("fly").setExecutor(new CommandFly());
         getCommand("menu").setExecutor(new CommandMenu());
+        getCommand("helpcom").setExecutor(new CommandHelpCom());
         System.out.println("[UtilitesMc] is ON!");
     }
 
