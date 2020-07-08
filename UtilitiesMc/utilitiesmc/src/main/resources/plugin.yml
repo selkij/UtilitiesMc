@@ -38,4 +38,3 @@ commands:
   helpcom:
     description: Open a help GUI for all the commands. usage /helpCom
     permission: helpcom.use
- 

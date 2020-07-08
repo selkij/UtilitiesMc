@@ -24,11 +24,11 @@ public class CommandGmThree implements CommandExecutor {
 
             // without argument
             if (args.length == 0) {
-
+                CommandGmThree.toggleGmThree(player);
             }
             // with argument
             if (args.length == 1) {
-                final Player target = Bukkit.getPlayerExact(args[0]);
+                Player target = Bukkit.getPlayerExact(args[0]);
                 if (target == null || !target.isOnline()) {
                     player.sendMessage("§4§lError: §rThe target is offline or does not exist!");
                 } else {

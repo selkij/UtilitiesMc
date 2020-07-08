@@ -8,6 +8,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CommandHeal implements CommandExecutor {
+    public static void heal(Player player) {
+        if (player.getGameMode() == GameMode.CREATIVE) {
+            player.sendMessage("§4§lERROR: §rYou can't be healed in creative mode");
+        } else {
+            player.sendMessage("§l§6You have been healed!");
+            player.setHealth(20);
+        }
+    }
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
@@ -20,7 +29,7 @@ public class CommandHeal implements CommandExecutor {
 
             // with arguments
             if (args.length == 1) {
-                final Player target = Bukkit.getPlayerExact(args[0]);
+                Player target = Bukkit.getPlayerExact(args[0]);
                 if (target == null || !target.isOnline()) {
                     player.sendMessage("§4§lError: §rThe target is offline or does not exist!");
                 } else {
@@ -37,14 +46,5 @@ public class CommandHeal implements CommandExecutor {
 
         }
         return false;
-    }
-
-    public static void heal(Player player) {
-        if (player.getGameMode() == GameMode.CREATIVE) {
-            player.sendMessage("§4§lERROR: §rYou can't be healed in creative mode");
-        } else {
-            player.sendMessage("§l§6You have been healed!");
-            player.setHealth(20);
-        }
     }
 }

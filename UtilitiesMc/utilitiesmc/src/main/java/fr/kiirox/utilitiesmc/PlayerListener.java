@@ -29,47 +29,51 @@ public class PlayerListener implements Listener {
                     || e.getCurrentItem().getItemMeta() == null || !e.getCurrentItem().getItemMeta().hasDisplayName())
                 return;
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§dBroadcast")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§d§lBroadcast")) {
                 player.closeInventory();
                 player.sendMessage("§4§lUsage:§r /bc <message>");
                 player.sendMessage("/broadcast <message>");
                 player.sendMessage("/alert <message>");
             }
 
-            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§fFly")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§f§lFly")) {
                 player.openInventory(flySet());
             }
 
-            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§6God")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§6§lGod")) {
                 player.openInventory(godSet());
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§eFeed")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§e§lFeed")) {
                 player.openInventory(feed());
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aHeal")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§a§lHeal")) {
                 player.openInventory(heal());
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§5Help")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§5§lHelp")) {
                 player.openInventory(help());
             }
 
-            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §1Creative")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §1§lCreative")) {
                 player.openInventory(gmOne());
             }
 
-            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §2Survival")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §2§lSurvival")) {
                 player.openInventory(gmZero());
             }
 
-            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §4Adventure")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §4§lAdventure")) {
                 player.openInventory(gmTwo());
             }
 
-            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §7Spectator")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §7§lSpectator")) {
                 player.openInventory(gmThree());
+            }
+
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§9§lModeration")) {
+                player.sendMessage("§4§lERROR:§r fonction en dévloppement");
             }
         }
 
@@ -142,7 +146,7 @@ public class PlayerListener implements Listener {
             }
         }
 
-        if(e.getView().getTitle().equalsIgnoreCase("Selection Heal")) {
+        if (e.getView().getTitle().equalsIgnoreCase("Selection Heal")) {
             player.closeInventory();
             CommandHeal.heal(play);
             if (!e.getCurrentItem().getItemMeta().getDisplayName().equals(player.getName())) {
@@ -150,7 +154,7 @@ public class PlayerListener implements Listener {
             }
         }
 
-        if(e.getView().getTitle().equalsIgnoreCase("Selection Feed")) {
+        if (e.getView().getTitle().equalsIgnoreCase("Selection Feed")) {
             player.closeInventory();
             CommandFeed.feed(play);
             if (!e.getCurrentItem().getItemMeta().getDisplayName().equals(player.getName())) {
@@ -158,14 +162,14 @@ public class PlayerListener implements Listener {
             }
         }
 
-        if(e.getView().getTitle().equalsIgnoreCase("Help Menu")) {
+        if (e.getView().getTitle().equalsIgnoreCase("Help Menu")) {
             e.setCancelled(true);
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lBack -->")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§4§lBack -->")) {
                 player.openInventory(getGui());
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§fFly")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§fFly")) {
                 player.closeInventory();
                 player.sendMessage("§6----------------------");
                 player.sendMessage("§b§lInfos Command: ");
@@ -179,7 +183,7 @@ public class PlayerListener implements Listener {
                 player.sendMessage("§6----------------------");
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§6God")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§6God")) {
                 player.closeInventory();
                 player.sendMessage("§6----------------------");
                 player.sendMessage("§b§lInfos Command: ");
@@ -193,7 +197,7 @@ public class PlayerListener implements Listener {
                 player.sendMessage("§6----------------------");
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aHeal")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aHeal")) {
                 player.closeInventory();
                 player.sendMessage("§6----------------------");
                 player.sendMessage("§b§lInfos Command: ");
@@ -206,7 +210,7 @@ public class PlayerListener implements Listener {
                 player.sendMessage("§6----------------------");
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§eFeed")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§eFeed")) {
                 player.closeInventory();
                 player.sendMessage("§6----------------------");
                 player.sendMessage("§b§lInfos Command: ");
@@ -219,7 +223,7 @@ public class PlayerListener implements Listener {
                 player.sendMessage("§6----------------------");
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§dBroadcast")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§dBroadcast")) {
                 player.closeInventory();
                 player.sendMessage("§6----------------------");
                 player.sendMessage("§b§lInfos Command: ");
@@ -234,7 +238,7 @@ public class PlayerListener implements Listener {
                 player.sendMessage("§6----------------------");
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §2Survival")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §2Survival")) {
                 player.closeInventory();
                 player.sendMessage("§6----------------------");
                 player.sendMessage("§b§lInfos Command: ");
@@ -247,7 +251,7 @@ public class PlayerListener implements Listener {
                 player.sendMessage("§6----------------------");
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §1Creative")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §1Creative")) {
                 player.closeInventory();
                 player.sendMessage("§6----------------------");
                 player.sendMessage("§b§lInfos Command: ");
@@ -260,7 +264,7 @@ public class PlayerListener implements Listener {
                 player.sendMessage("§6----------------------");
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §4Adventure")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §4Adventure")) {
                 player.closeInventory();
                 player.sendMessage("§6----------------------");
                 player.sendMessage("§b§lInfos Command: ");
@@ -273,7 +277,7 @@ public class PlayerListener implements Listener {
                 player.sendMessage("§6----------------------");
             }
 
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §7Spectator")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Gamemode §7Spectator")) {
                 player.closeInventory();
                 player.sendMessage("§6----------------------");
                 player.sendMessage("§b§lInfos Command: ");
@@ -287,6 +291,7 @@ public class PlayerListener implements Listener {
             }
 
         }
+
 
     }
 

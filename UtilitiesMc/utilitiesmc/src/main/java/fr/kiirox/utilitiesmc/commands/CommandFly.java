@@ -12,11 +12,11 @@ public class CommandFly implements CommandExecutor {
         if (player.getAllowFlight() == true) {
             player.setAllowFlight(false);
             player.setFlying(false);
-            player.sendMessage("§6set [§4FLY§6] mode to §cOFF§6 for §e" + player.getName());
+            player.sendMessage("§6set [§4Fly§6] mode to §cOFF§6 for §e" + player.getName());
         } else {
             player.setAllowFlight(true);
             player.setFlying(true);
-            player.sendMessage("§6set [§4FLY§6] mode to §2ON§6 for §e" + player.getName());
+            player.sendMessage("§6set [§4Fly§6] mode to §2ON§6 for §e" + player.getName());
         }
 
     }
@@ -39,13 +39,13 @@ public class CommandFly implements CommandExecutor {
                     if (target.getAllowFlight() == true) {
                         target.setAllowFlight(false);
                         target.setFlying(false);
-                        player.sendMessage("§6set [§4FLY§6] mode to §cOFF§6 for §e" + target.getName());
+                        player.sendMessage("§6set [§4Fly§6] mode to §cOFF§6 for §e" + target.getName());
                         target.sendMessage("§6[§4FLY§6] mode has been set to §cOFF");
                     } else {
                         target.setAllowFlight(true);
                         target.setFlying(true);
-                        player.sendMessage("§6set [§4FLY§6] mode to §2ON§6 for §e" + target.getName());
-                        target.sendMessage("§6[§4FLY§6] mode has been set to §2ON");
+                        player.sendMessage("§6set [§4Fly§6] mode to §2ON§6 for §e" + target.getName());
+                        target.sendMessage("§6[§4Fly§6] mode has been set to §2ON");
                     }
                 }
             }

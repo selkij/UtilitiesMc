@@ -28,9 +28,9 @@ public class CommandGmTwo implements CommandExecutor {
             }
             // with argument
             if (args.length == 1) {
-                final Player target = Bukkit.getPlayerExact(args[0]);
+                Player target = Bukkit.getPlayerExact(args[0]);
                 if (target == null || !target.isOnline()) {
-                    player.sendMessage("§4Error: §lThe target is offline or does not exist!");
+                    player.sendMessage("§4§lError: §rThe target is offline or does not exist!");
                 } else {
                     if (target.getGameMode() == GameMode.ADVENTURE) {
                         player.sendMessage("§l§e" + target.getName() + " §6is already in [§4Adventure§6] mode");

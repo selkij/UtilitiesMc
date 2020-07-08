@@ -13,32 +13,48 @@ public class CommandMenu implements CommandExecutor {
     public static Inventory getGui() {
         Inventory inventory = Bukkit.createInventory(null, 54, "Menu");
 
-        ItemBuilder not = new ItemBuilder(Material.STAINED_GLASS_PANE).setName(" ")
+        ItemBuilder not = new ItemBuilder(Material.STAINED_GLASS_PANE)
+                .setName(" ")
                 .setDurability((short) 8);
-        ItemBuilder fly = new ItemBuilder(Material.FEATHER).setName("§fFly")
-                .setLore("§8§lToggle the fly mode to be able to fly");
-        ItemBuilder god = new ItemBuilder(Material.SKULL_ITEM, 1, (byte) 3).setName("§6God")
-                .setLore("§8§lToggle the god mode to be invincible");
-        ItemBuilder gmOne = new ItemBuilder(Material.DIAMOND_BLOCK, 1, (byte) 3).setName("Gamemode §1Creative")
-                .setLore("§8§lSet the gamemode to creative");
-        ItemBuilder gmTwo = new ItemBuilder(Material.CONCRETE).setName("Gamemode §4Adventure")
+        ItemBuilder fly = new ItemBuilder(Material.FEATHER)
+                .setName("§f§lFly")
+                .setLore("§8Toggle the fly mode to be able to fly");
+        ItemBuilder god = new ItemBuilder(Material.SKULL_ITEM, 1, (byte) 3)
+                .setName("§6§lGod")
+                .setLore("§8Toggle the god mode to be invincible");
+        ItemBuilder gmOne = new ItemBuilder(Material.DIAMOND_BLOCK, 1, (byte) 3)
+                .setName("Gamemode §1§lCreative")
+                .setLore("§8Set the gamemode to creative");
+        ItemBuilder gmTwo = new ItemBuilder(Material.WOOL)
+                .setName("Gamemode §4§lAdventure")
                 .setDurability((short) 14)
-                .setLore("§8§lSet the gamemode to adventure");
-        ItemBuilder gmThree = new ItemBuilder(Material.GLASS).setName("Gamemode §7Spectator")
-                .setLore("§8§lSet the gamemode to spectator");
-        ItemBuilder gmZero = new ItemBuilder(Material.GRASS).setName("Gamemode §2Survival")
-                .setLore("§8§lSet the gamemode to survival");
-        ItemBuilder heal = new ItemBuilder(Material.GOLDEN_APPLE, 1, (byte) 3).setName("§aHeal")
+                .setLore("§8Set the gamemode to adventure");
+        ItemBuilder gmThree = new ItemBuilder(Material.GLASS)
+                .setName("Gamemode §7§lSpectator")
+                .setLore("§8Set the gamemode to spectator");
+        ItemBuilder gmZero = new ItemBuilder(Material.GRASS)
+                .setName("Gamemode §2§lSurvival")
+                .setLore("§8Set the gamemode to survival");
+        ItemBuilder heal = new ItemBuilder(Material.GOLDEN_APPLE, 1, (byte) 3)
+                .setName("§a§lHeal")
                 .setDurability((short) 1)
-                .setLore("§8§lSet the health level to 20");
-        ItemBuilder feed = new ItemBuilder(Material.COOKED_BEEF).setName("§eFeed")
-                .setLore("§8§lSet the food level to 20");
-        ItemBuilder bc = new ItemBuilder(Material.BEACON).setName("§dBroadcast")
-                .setLore("§8§lDo an alert message");
-        ItemBuilder help = new ItemBuilder(Material.COMPASS).setName("§5Help")
-                .setLore("§8§lOpen a GUI with the informations", "§8§lof all the commands");
+                .setLore("§8Set the health level to 20");
+        ItemBuilder feed = new ItemBuilder(Material.COOKED_BEEF)
+                .setName("§e§lFeed")
+                .setLore("§8Set the food level to 20");
+        ItemBuilder bc = new ItemBuilder(Material.BEACON)
+                .setName("§d§lBroadcast")
+                .setLore("§8Do an alert message");
+        ItemBuilder help = new ItemBuilder(Material.COMPASS)
+                .setName("§5§lHelp")
+                .setLore("§8Open a GUI with the informations", "§8§lof all the commands");
+        ItemBuilder mod = new ItemBuilder(Material.GOLD_AXE)
+                .setName("§9§lModeration")
+                .setLore("§8open a GUI with all the moderations commands");
 
-        inventory.setItem(40, help.toItemStack());
+
+        inventory.setItem(40, mod.toItemStack());
+        inventory.setItem(49, help.toItemStack());
         inventory.setItem(38, bc.toItemStack());
         inventory.setItem(21, feed.toItemStack());
         inventory.setItem(20, heal.toItemStack());
@@ -49,7 +65,7 @@ public class CommandMenu implements CommandExecutor {
         inventory.setItem(12, god.toItemStack());
         inventory.setItem(11, fly.toItemStack());
         //none
-        int[] slots = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 16, 17, 18, 19, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 39, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53};
+        int[] slots = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 16, 17, 18, 19, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 39, 41, 43, 44, 45, 46, 47, 48, 50, 51, 52, 53};
         for (int i : slots) {
 
             inventory.setItem(i, not.toItemStack());
@@ -192,27 +208,37 @@ public class CommandMenu implements CommandExecutor {
     public static Inventory help() {
         Inventory inventory = Bukkit.createInventory(null, 18, "Help Menu");
 
-        ItemBuilder fly = new ItemBuilder(Material.FEATHER).setName("§fFly")
+        ItemBuilder fly = new ItemBuilder(Material.FEATHER)
+                .setName("§fFly")
                 .setLore("§8§lToggle the fly mode to be able to fly");
-        ItemBuilder god = new ItemBuilder(Material.SKULL_ITEM, 1, (byte) 3).setName("§6God")
+        ItemBuilder god = new ItemBuilder(Material.SKULL_ITEM, 1, (byte) 3)
+                .setName("§6God")
                 .setLore("§8§lToggle the god mode to be invincible");
-        ItemBuilder gmOne = new ItemBuilder(Material.DIAMOND_BLOCK, 1, (byte) 3).setName("Gamemode §1Creative")
+        ItemBuilder gmOne = new ItemBuilder(Material.DIAMOND_BLOCK, 1, (byte) 3)
+                .setName("Gamemode §1Creative")
                 .setLore("§8§lSet the gamemode to creative");
-        ItemBuilder gmTwo = new ItemBuilder(Material.CONCRETE).setName("Gamemode §4Adventure")
+        ItemBuilder gmTwo = new ItemBuilder(Material.WOOL)
+                .setName("Gamemode §4Adventure")
                 .setDurability((short) 14)
                 .setLore("§8§lSet the gamemode to adventure");
-        ItemBuilder gmThree = new ItemBuilder(Material.GLASS).setName("Gamemode §7Spectator")
+        ItemBuilder gmThree = new ItemBuilder(Material.GLASS)
+                .setName("Gamemode §7Spectator")
                 .setLore("§8§lSet the gamemode to spectator");
-        ItemBuilder gmZero = new ItemBuilder(Material.GRASS).setName("Gamemode §2Survival")
+        ItemBuilder gmZero = new ItemBuilder(Material.GRASS)
+                .setName("Gamemode §2Survival")
                 .setLore("§8§lSet the gamemode to survival");
-        ItemBuilder heal = new ItemBuilder(Material.GOLDEN_APPLE, 1, (byte) 3).setName("§aHeal")
+        ItemBuilder heal = new ItemBuilder(Material.GOLDEN_APPLE, 1, (byte) 3)
+                .setName("§aHeal")
                 .setDurability((short) 1)
                 .setLore("§8§lSet the health level to 20");
-        ItemBuilder feed = new ItemBuilder(Material.COOKED_BEEF).setName("§eFeed")
+        ItemBuilder feed = new ItemBuilder(Material.COOKED_BEEF)
+                .setName("§eFeed")
                 .setLore("§8§lSet the food level to 20");
-        ItemBuilder bc = new ItemBuilder(Material.BEACON).setName("§dBroadcast")
+        ItemBuilder bc = new ItemBuilder(Material.BEACON)
+                .setName("§dBroadcast")
                 .setLore("§8§lDo an alert message");
-        ItemBuilder back = new ItemBuilder(Material.BARRIER).setName("§4§lBack -->");
+        ItemBuilder back = new ItemBuilder(Material.BARRIER)
+                .setName("§4§lBack -->");
 
         inventory.setItem(0, fly.toItemStack());
         inventory.setItem(1, god.toItemStack());
