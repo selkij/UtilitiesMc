@@ -26,9 +26,9 @@ public class CommandFeed implements CommandExecutor {
                     if (target.getGameMode() == GameMode.CREATIVE) {
                         player.sendMessage("§4§lERROR: §rThe target can't be feed in creative mode");
                     } else {
-                        player.sendMessage("§l§e" + target.getName() + " §6has been feed");
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §e" + target.getName() + " §6has been feed");
                         target.setFoodLevel(20);
-                        target.sendMessage("§l§6You have been feed!");
+                        target.sendMessage("§b§lUtilitiesMc §r§8» §6You have been feed!");
                     }
                 }
             }
@@ -40,7 +40,7 @@ public class CommandFeed implements CommandExecutor {
         if (player.getGameMode() == GameMode.CREATIVE) {
             player.sendMessage("§4§lERROR: §rYou can't be feed in creative mode");
         } else {
-            player.sendMessage("§l§6You have been feed!");
+            player.sendMessage("§b§lUtilitiesMc §r§8» §6You have been feed!");
             player.setFoodLevel(20);
         }
     }

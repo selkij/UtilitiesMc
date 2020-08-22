@@ -10,10 +10,10 @@ import org.bukkit.entity.Player;
 public class CommandGmThree implements CommandExecutor {
     public static void toggleGmThree(Player player) {
         if (player.getGameMode() == GameMode.SPECTATOR) {
-            player.sendMessage("§l§6You are already in [§4Spectator§6] mode");
+            player.sendMessage("§b§lUtilitiesMc §r§8» §6You are already in §4Spectator§6 mode");
         } else {
             player.setGameMode(GameMode.SPECTATOR);
-            player.sendMessage("§l§6set [§4Spectator§6] mode to §e" + player.getName());
+            player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4Spectator§6 mode to §e" + player.getName());
         }
     }
 
@@ -33,10 +33,10 @@ public class CommandGmThree implements CommandExecutor {
                     player.sendMessage("§4§lError: §rThe target is offline or does not exist!");
                 } else {
                     if (target.getGameMode() == GameMode.SPECTATOR) {
-                        player.sendMessage("§l§e" + target.getName() + " §6is already in [§4Spectator§6] mode");
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §e" + target.getName() + " §6is already in §4Spectator§6 mode");
                     } else {
                         target.setGameMode(GameMode.SPECTATOR);
-                        player.sendMessage("§l§6set [§4Spectator§6] mode to §e" + target.getName());
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4Spectator§6 mode to §e" + target.getName());
                     }
                 }
             }

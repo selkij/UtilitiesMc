@@ -1,6 +1,7 @@
 package fr.kiirox.utilitiesmc;
 
 import fr.kiirox.utilitiesmc.commands.*;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -18,12 +19,12 @@ public class Main extends JavaPlugin {
         getCommand("fly").setExecutor(new CommandFly());
         getCommand("menu").setExecutor(new CommandMenu());
         getCommand("helpcom").setExecutor(new CommandHelpCom());
-        System.out.println("UtilitesMc is ON!");
+        getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "[UtilitiesMc] " + ChatColor.GREEN + "On");
     }
 
     @Override
     public void onDisable() {
-        System.out.println("UtilitesMc is OFF!");
+        getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "[UtilitiesMc] " + ChatColor.RED + "Off");
     }
 
 }

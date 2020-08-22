@@ -1,5 +1,5 @@
 name: UtilitiesMc
-version: 2.2
+version: 2.1.1
 author: kiirox
 main: fr.kiirox.utilitiesmc.Main
 commands: 
@@ -38,11 +38,3 @@ commands:
   helpcom:
     description: Open a help GUI for all the commands. usage /helpCom
     permission: helpcom.use
-  mod:
-    description: Open a GUI with all the moderation commands. usage /mod
-    permission: mod.use
-    aliases: ["ss"]
-  kick:
-    dedscription: Kick the player from the server. usage /kick <player> <reason>
-    permission: kick.use
- 

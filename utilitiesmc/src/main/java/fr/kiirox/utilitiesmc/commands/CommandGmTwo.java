@@ -10,10 +10,10 @@ import org.bukkit.entity.Player;
 public class CommandGmTwo implements CommandExecutor {
     public static void toggleGmTwo(Player player) {
         if (player.getGameMode() == GameMode.ADVENTURE) {
-            player.sendMessage("§l§6You are already in [§4Advanture§6] mode");
+            player.sendMessage("§l§6You are already in §4Advanture§6 mode");
         } else {
             player.setGameMode(GameMode.ADVENTURE);
-            player.sendMessage("§l§6set [§4Advanture§6] mode to §e" + player.getName());
+            player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4Advanture§6 mode to §e" + player.getName());
         }
     }
 
@@ -33,10 +33,10 @@ public class CommandGmTwo implements CommandExecutor {
                     player.sendMessage("§4§lError: §rThe target is offline or does not exist!");
                 } else {
                     if (target.getGameMode() == GameMode.ADVENTURE) {
-                        player.sendMessage("§l§e" + target.getName() + " §6is already in [§4Adventure§6] mode");
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §e" + target.getName() + " §6is already in §4Adventure§6 mode");
                     } else {
                         target.setGameMode(GameMode.ADVENTURE);
-                        player.sendMessage("§l§6set [§4Adventure§6] mode to §e" + target.getName());
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4Adventure§6 mode to §e" + target.getName());
                     }
                 }
             }

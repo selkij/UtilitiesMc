@@ -11,10 +11,10 @@ public class CommandGod implements CommandExecutor {
     public static void toggleGod(Player player) {
         if (player.isInvulnerable()) {
             player.setInvulnerable(false);
-            player.sendMessage("§l§6set [§4God§6] mode to §cOFF§6 for §e" + player.getName());
+            player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4God§6 mode to §cOFF§6 for §e" + player.getName());
         } else {
             player.setInvulnerable(true);
-            player.sendMessage("§l§6set [§4God§6] mode to §2ON§6 for §e" + player.getName());
+            player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4God§6 mode to §2ON§6 for §e" + player.getName());
         }
     }
 
@@ -34,12 +34,12 @@ public class CommandGod implements CommandExecutor {
                 } else {
                     if (target.isInvulnerable()) {
                         target.setInvulnerable(false);
-                        player.sendMessage("§l§6set [§4God§6] mode to §cOFF§6 for §e" + target.getName());
-                        target.sendMessage("§l§6[§4God§6] mode has been set to §cOFF");
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4God§6 mode to §cOFF§6 for §e" + target.getName());
+                        target.sendMessage("§b§lUtilitiesMc §r§8» §6§4God§6 mode has been set to §cOFF");
                     } else {
                         target.setInvulnerable(true);
-                        player.sendMessage("§l§6set [§4God§6] mode to §2ON§6 for §e" + target.getName());
-                        target.sendMessage("§l§6[§4God§6] mode has been set to §2ON");
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4God§6 mode to §2ON§6 for §e" + target.getName());
+                        target.sendMessage("§b§lUtilitiesMc §r§8» §6§4God§6 mode has been set to §2ON");
                     }
                 }
             }

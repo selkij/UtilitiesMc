@@ -12,7 +12,7 @@ public class CommandHeal implements CommandExecutor {
         if (player.getGameMode() == GameMode.CREATIVE) {
             player.sendMessage("§4§lERROR: §rYou can't be healed in creative mode");
         } else {
-            player.sendMessage("§l§6You have been healed!");
+            player.sendMessage("§b§lUtilitiesMc §r§8» §6You have been healed!");
             player.setHealth(20);
         }
     }
@@ -36,9 +36,9 @@ public class CommandHeal implements CommandExecutor {
                     if (target.getGameMode() == GameMode.CREATIVE) {
                         player.sendMessage("§4§lERROR: §rThe target can't be healed in creative mode");
                     } else {
-                        player.sendMessage("§l§e" + target.getName() + " §6has been healed");
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §e" + target.getName() + " §6has been healed");
                         target.setHealth(20);
-                        target.sendMessage("§l§6You have been healed!");
+                        target.sendMessage("§b§lUtilitiesMc §r§8» §6You have been healed!");
                     }
                 }
 

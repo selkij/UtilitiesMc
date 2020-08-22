@@ -10,10 +10,10 @@ import org.bukkit.entity.Player;
 public class CommandGmZero implements CommandExecutor {
     public static void toggleGmzero(Player player) {
         if (player.getGameMode() == GameMode.SURVIVAL) {
-            player.sendMessage("§l§6You are already in [§4Survival§6] mode");
+            player.sendMessage("§b§lUtilitiesMc §r§8» §l§6You are already in §4Survival§6 mode");
         } else {
             player.setGameMode(GameMode.SURVIVAL);
-            player.sendMessage("§l§6set [§4Survival§6] mode to §e" + player.getName());
+            player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4Survival§6 mode to §e" + player.getName());
         }
     }
 
@@ -33,10 +33,10 @@ public class CommandGmZero implements CommandExecutor {
                     player.sendMessage("§4§lError: §rThe target is offline or does not exist!");
                 } else {
                     if (target.getGameMode() == GameMode.SURVIVAL) {
-                        player.sendMessage("§l§e" + target.getName() + " §6is already in [§4Survival§6] mode");
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §e" + target.getName() + " §6is already in §4Survival§6 mode");
                     } else {
                         target.setGameMode(GameMode.SURVIVAL);
-                        player.sendMessage("§l§6set [§4Survival§] mode to §e" + target.getName());
+                        player.sendMessage("§b§lUtilitiesMc §r§8» §6set §4Survival§ mode to §e" + target.getName());
                     }
                 }
             }
